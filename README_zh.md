@@ -286,10 +286,11 @@ MIT License - 详见 [LICENSE](LICENSE)
 
 - [X402 协议规范](https://github.com/x402/spec)
 - [Sui 文档](https://docs.sui.io/)
-- [GitHub 仓库](https://github.com/xilibi2003/x402-sdk-for-sui)
+- [GitHub 仓库](https://github.com/zhiming817/x402-sdk-for-sui)
+- [X402 Solana SDK](https://github.com/xilibi2003/x402-sdk-for-solana) - 参考实现
 
 ## 支持
 
 问题和疑问：
-- GitHub Issues: https://github.com/xilibi2003/x402-sdk-for-sui/issues
+- GitHub Issues: https://github.com/zhiming817/x402-sdk-for-sui/issues
 - Discord: [加入社区]()

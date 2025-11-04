@@ -286,10 +286,11 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 - [X402 Protocol Specification](https://github.com/x402/spec)
 - [Sui Documentation](https://docs.sui.io/)
-- [GitHub Repository](https://github.com/xilibi2003/x402-sdk-for-sui)
+- [GitHub Repository](https://github.com/zhiming817/x402-sdk-for-sui)
+- [X402 Solana SDK](https://github.com/xilibi2003/x402-sdk-for-solana) - Reference implementation
 
 ## Support
 
 For issues and questions:
-- GitHub Issues: https://github.com/xilibi2003/x402-sdk-for-sui/issues
+- GitHub Issues: https://github.com/zhiming817/x402-sdk-for-sui/issues
 - Discord: [Join our community]()
