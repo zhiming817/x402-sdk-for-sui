@@ -39,7 +39,7 @@
     "micropayment",
     "blockchain"
   ],
-  "author": "Tiny熊",
+  "author": "zhiming817",
   "license": "MIT",
   "dependencies": {
     "@mysten/bcs": "^1.9.2",
