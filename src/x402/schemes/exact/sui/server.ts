@@ -1,5 +1,5 @@
 import { SuiClient, getFullnodeUrl } from "@mysten/sui/client";
-import { fromB64 } from "@mysten/bcs";
+import { fromB64, toB64 } from "@mysten/bcs";
 import type {
   PaymentRequirement,
   PaymentPayload,
@@ -97,10 +97,10 @@ export async function settlePayment(
   const client = getSuiClient(paymentPayload.network, rpcUrl);
 
   try {
-    // Execute transaction
+    // Execute transaction - signature is already in base64 string format
     const result = await client.executeTransactionBlock({
       transactionBlock: fromB64(paymentPayload.transaction),
-      signature: fromB64(paymentPayload.signature),
+      signature: paymentPayload.signature,
       options: {
         showEffects: true,
         showEvents: true,

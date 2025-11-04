@@ -1,5 +1,5 @@
 import express from "express";
-import type { Request, Response } from "express";
+import type { Request, Response, Express } from "express";
 import { verifyPayment, settlePayment } from "../schemes/exact/sui/server";
 import type { PaymentPayload, PaymentRequirement } from "../../types";
 
@@ -9,7 +9,7 @@ import type { PaymentPayload, PaymentRequirement } from "../../types";
  * @param rpcUrl - Optional Sui RPC URL
  * @returns Express application
  */
-export function createFacilitatorServer(port: number = 3002, rpcUrl?: string) {
+export function createFacilitatorServer(port: number = 3002, rpcUrl?: string): Express {
   const app = express();
   app.use(express.json());
 

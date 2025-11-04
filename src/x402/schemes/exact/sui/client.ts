@@ -17,7 +17,7 @@ export interface SuiSigner {
 /**
  * Create a signer from a private key
  * @param network - Sui network (sui-localnet, sui-devnet, sui-testnet, sui-mainnet)
- * @param privateKey - Private key in hex format (with or without 0x prefix)
+ * @param privateKey - Private key in hex format (with or without 0x prefix) or bech32 format (suiprivkey1...)
  * @returns SuiSigner object containing address and keypair
  */
 export async function createSigner(
@@ -25,14 +25,18 @@ export async function createSigner(
   privateKey: string
 ): Promise<SuiSigner> {
   try {
-    // Remove 0x prefix if present
-    const cleanKey = privateKey.replace(/^0x/, "");
+    let keypair: Ed25519Keypair;
     
-    // Convert hex to bytes
-    const privateKeyBytes = fromHex(cleanKey);
-    
-    // Create keypair from secret key
-    const keypair = Ed25519Keypair.fromSecretKey(privateKeyBytes);
+    // Check if it's a bech32 encoded key (suiprivkey1...)
+    if (privateKey.startsWith('suiprivkey')) {
+      // Use Ed25519Keypair.fromSecretKey which accepts bech32 format
+      keypair = Ed25519Keypair.fromSecretKey(privateKey);
+    } else {
+      // Handle hex format
+      const cleanKey = privateKey.replace(/^0x/, "");
+      const privateKeyBytes = fromHex(cleanKey);
+      keypair = Ed25519Keypair.fromSecretKey(privateKeyBytes);
+    }
 
     return {
       address: keypair.toSuiAddress(),
@@ -130,7 +134,7 @@ export async function createAndSignPayment(
       scheme: "exact",
       network: paymentRequirement.network,
       transaction: toB64(txBytes),
-      signature: toB64(signature),
+      signature: typeof signature === 'string' ? signature : toB64(signature),
       amount: paymentRequirement.maxAmountRequired,
       payTo: paymentRequirement.payTo,
       asset: paymentRequirement.asset

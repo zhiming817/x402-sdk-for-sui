@@ -85,6 +85,12 @@ export function paymentMiddleware(
         accepts: [paymentRequirement]
       };
 
+      // Set x-payment-required header with base64 encoded response data
+      res.setHeader(
+        "x-payment-required",
+        Buffer.from(JSON.stringify(responseData)).toString("base64")
+      );
+
       return res.status(402).json(responseData);
     }
 
@@ -173,7 +179,7 @@ export function paymentMiddleware(
               });
 
               if (settleResponse.ok) {
-                const paymentResponse = await settleResponse.json();
+                const paymentResponse = await settleResponse.json() as { transactionDigest?: string };
                 res.setHeader(
                   "x-payment-response",
                   Buffer.from(JSON.stringify(paymentResponse)).toString("base64")

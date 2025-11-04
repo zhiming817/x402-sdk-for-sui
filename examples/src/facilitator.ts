@@ -1,7 +1,7 @@
 import { config } from "dotenv";
-import { createFacilitatorServer } from "x402-sdk-for-sui";
+import { createFacilitatorServer } from "../../src/index";
 
-config({ path: '.env' });
+config({ path: 'examples/.env' });
 
 const port = parseInt(process.env.PORT || "3002");
 const rpcUrl = process.env.SUI_RPC_URL;

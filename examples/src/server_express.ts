@@ -7,9 +7,9 @@ import {
   type RoutesConfig,
   type FacilitatorConfig,
   type SuiNetwork
-} from "x402-sdk-for-sui/express";
+} from "../../src/x402-express/index";
 
-config({ path: '.env_server' });
+config({ path: 'examples/.env_server' });
 
 const app = express();
 const port = parseInt(process.env.PORT || "4021");

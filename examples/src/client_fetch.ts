@@ -3,9 +3,9 @@ import {
   decodeXPaymentResponse,
   wrapFetchWithPayment,
   createSigner
-} from "x402-sdk-for-sui/fetch";
+} from "../../src/x402-fetch/index";
 
-config({ path: '.env_client' });
+config({ path: 'examples/.env_client' });
 
 const suiPrivateKey = process.env.USER_SUI_PRIVATE_KEY || "";
 const suiNetwork = (process.env.SUI_NETWORK || "sui-devnet") as any;
