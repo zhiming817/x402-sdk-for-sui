@@ -1,0 +1,33 @@
+# Source files
+src/
+tsconfig.json
+
+# Examples and scripts
+examples/
+scripts/
+sui-local-net/
+
+# Environment files
+.env
+.env*
+*.env
+
+# Development files
+node_modules/
+.vscode/
+.idea/
+
+# Git files
+.git/
+.gitignore
+
+# Test files
+*.test.ts
+*.spec.ts
+jest.config.js
+
+# Documentation
+CONTRIBUTING.md
+
+# Build artifacts
+*.tsbuildinfo

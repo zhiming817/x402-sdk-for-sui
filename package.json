@@ -4,6 +4,11 @@
   "description": "X402 payment protocol SDK for Sui blockchain",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -29,7 +34,8 @@
     "402_server": "tsx examples/src/server_express.ts",
     "402_client": "tsx examples/src/client_fetch.ts",
     "test": "jest",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm run clean && pnpm run build"
   },
   "keywords": [
     "sui",
@@ -41,6 +47,14 @@
   ],
   "author": "zhiming817",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhiming817/x402-sdk-for-sui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhiming817/x402-sdk-for-sui/issues"
+  },
+  "homepage": "https://github.com/zhiming817/x402-sdk-for-sui#readme",
   "dependencies": {
     "@mysten/bcs": "^1.9.2",
     "@mysten/sui": "^1.14.0",
