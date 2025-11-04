@@ -1,0 +1,4 @@
+# Client Configuration
+SUI_NETWORK=sui-localnet
+SUI_RPC_URL=http://127.0.0.1:9000
+USER_SUI_PRIVATE_KEY=your_client_private_key_here

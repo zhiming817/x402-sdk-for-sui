@@ -1,0 +1,9 @@
+# Server Configuration
+FACILITATOR_URL=http://localhost:3002
+NETWORK=sui-localnet
+ADDRESS=your_server_sui_address_here
+TOKEN_COIN_TYPE=0x2::sui::SUI
+TOKEN_DECIMALS=9
+TOKEN_NAME=SUI
+SUI_RPC_URL=http://127.0.0.1:9000
+PORT=4021

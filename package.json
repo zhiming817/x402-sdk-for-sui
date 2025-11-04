@@ -1,0 +1,57 @@
+{
+  "name": "x402-sdk-for-sui",
+  "version": "0.1.0",
+  "description": "X402 payment protocol SDK for Sui blockchain",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./fetch": {
+      "import": "./dist/x402-fetch/index.js",
+      "require": "./dist/x402-fetch/index.js",
+      "types": "./dist/x402-fetch/index.d.ts"
+    },
+    "./express": {
+      "import": "./dist/x402-express/index.js",
+      "require": "./dist/x402-express/index.js",
+      "types": "./dist/x402-express/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "setup-localnet": "tsx scripts/setup-localnet.ts",
+    "402_facilitator": "tsx examples/src/facilitator.ts",
+    "402_server": "tsx examples/src/server_express.ts",
+    "402_client": "tsx examples/src/client_fetch.ts",
+    "test": "jest",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "sui",
+    "x402",
+    "payment",
+    "http402",
+    "micropayment",
+    "blockchain"
+  ],
+  "author": "Tiny熊",
+  "license": "MIT",
+  "dependencies": {
+    "@mysten/sui": "^1.14.0",
+    "express": "^4.18.2",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0"
+  }
+}

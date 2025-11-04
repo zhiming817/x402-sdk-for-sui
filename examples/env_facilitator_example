@@ -1,0 +1,5 @@
+# Facilitator Configuration
+SUI_PRIVATE_KEY=your_facilitator_private_key_here
+SUI_NETWORK=sui-localnet
+SUI_RPC_URL=http://127.0.0.1:9000
+PORT=3002
